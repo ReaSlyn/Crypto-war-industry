@@ -262,6 +262,10 @@ class Display():
                 pygame.draw.rect(self.screen, self.black, (1205, 550, 75, 75), 5)
                 self.message_display_center("... !", 48, 1242.5, 582.5, self.red, 6)
 
+        if self.game.damage_player_1 and self.game.damage_player_2 and self.game.turn == 1:
+            self.message_display_center(f"- {self.game.damage_player_2}", 60, 300, 200, self.red, 8, "bold")
+            self.message_display_center(f"- {self.game.damage_player_1}", 60, 980, 200, self.red, 8, "bold")
+
     def endscreen(self):
         self.load_image_position("assets/dual/background.jpg", 1280, 720, 0, 0)
         if self.game.Player1.health == 0:
